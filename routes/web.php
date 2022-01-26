@@ -21,6 +21,10 @@ Route::post('/signin', [AuthController::class, 'signin'])->name('signin');
 Route::post('/signup', [AuthController::class, 'signup'])->name('signup');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
+Route::get('/posts', [
+    PostController::class,
+    'index'
+])->name('posts')->middleware('auth');
 
 Route::get('dashboard', [
     PostController::class,
