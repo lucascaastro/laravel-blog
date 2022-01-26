@@ -27,6 +27,11 @@ Route::get('dashboard', [
     'index'
 ])->name('dashboard')->middleware('auth');
 
+Route::get('/posts/index', [
+    PostController::class,
+    'index'
+])->name('dashboard')->middleware('auth');
+
 Route::get('/posts/create', [
     PostController::class,
     'create'
